@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import CreateUser from './Components/createUser';
+import CreateUserForm from './Components/createUserForm';
 import { graphql, compose } from 'react-apollo';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Gamesuite</h1>
                 </header>
-                <CreateUser />
+                <CreateUserForm />
             </div>
         );
     }

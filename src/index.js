@@ -7,6 +7,8 @@ import registerServiceWorker from './registerServiceWorker';
 import AWSAppSyncClient from 'aws-appsync';
 import { ApolloProvider } from 'react-apollo';
 import { Rehydrated } from 'aws-appsync-react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import muiTheme from './config/theme';
 
 const client = new AWSAppSyncClient({
     url:
@@ -19,11 +21,13 @@ const client = new AWSAppSyncClient({
 });
 
 ReactDOM.render(
-    <ApolloProvider client={client}>
-        <Rehydrated>
-            <App />
-        </Rehydrated>
-    </ApolloProvider>,
+    <MuiThemeProvider muiTheme={muiTheme}>
+        <ApolloProvider client={client}>
+            <Rehydrated>
+                <App />
+            </Rehydrated>
+        </ApolloProvider>
+    </MuiThemeProvider>,
     document.getElementById('root')
 );
 registerServiceWorker();
