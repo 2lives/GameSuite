@@ -5,32 +5,34 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import { Form, Field } from 'react-final-form';
 import { Mutation } from 'react-apollo';
+// import createUser from '../Mutations/createUserMutation';
 import gql from 'graphql-tag';
 
-// const createUser = gql`
-//     mutation createUser(
-//         $firstName: String!
-//         $lastName: String!
-//         $email: String!
-//         $created: Srtring!
-//         $avatar: String
-//         $username: String!
-//     ) {
-//         createUser(
-//             firstname: $firstname
-//             lastname: $lastname
-//             email: $email
-//             created: $created
-//             avatar: $avatar
-//             username: $username
-//         ) {
-//             id
-//             firstname
-//             lastname
-//             username
-//         }
-//     }
-// `;
+const createUser = gql`
+    mutation createUser(
+        $firstname: String!
+        $lastname: String!
+        $email: String!
+        $username: String!
+        $joined: String!
+        $avatar: String!
+    ) {
+        createUser(
+            firstname: $firstname
+            lastname: $lastname
+            email: $email
+            username: $username
+            joined: $joined
+            avatar: $avatar
+        ) {
+            id
+            firstname
+            lastname
+            username
+            joined
+        }
+    }
+`;
 
 class CreateUserForm extends Component {
     constructor(props) {
@@ -44,19 +46,11 @@ class CreateUserForm extends Component {
         };
     }
 
-    handleNext = () => {
-        const { stepIndex } = this.state;
-        this.setState({
-            stepIndex: stepIndex + 1,
-            finished: stepIndex >= 4
-        });
-    };
-
-    handleChange = name => event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    };
+    //     handleChange = name => event => {
+    //         this.setState({
+    //             [event.target.name]: event.target.value
+    //         });
+    //     };
 
     handleCreate = () => {
         console.log('create', this.state.username);
@@ -73,10 +67,10 @@ class CreateUserForm extends Component {
             <div>
                 <Form
                     onSubmit={values => this.onSubmit(values)}
-                    // validate={this.validate.bind(this)}
+                    validate={this.validate.bind(this)}
                     render={({ handleSubmit, pristine, invalid, values }) => (
                         <Mutation mutation={createUser}>
-                            {(addItem, { data }) => (
+                            {(createUser, { data }) => (
                                 <form
                                     onSubmit={e => {
                                         e.preventDefault();

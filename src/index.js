@@ -16,7 +16,7 @@ const client = new AWSAppSyncClient({
     region: 'us-west-2',
     auth: {
         type: 'API_KEY',
-        apiKey: 'da2-fnrzjms7f5dnbbagyipaes27ai'
+        apiKey: 'da2-i5hpzokadnfcxp3pqqazjeszyq'
     }
 });
 
