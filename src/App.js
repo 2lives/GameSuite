@@ -14,13 +14,13 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Gamesuite</h1>
                 </header>
-                <CreateUserForm />
+                <CreateUserWithData />
             </div>
         );
     }
 }
 
-const createUserWithData = compose(
+const CreateUserWithData = compose(
     graphql(CreateUserMU, {
         props: props => ({
             onCreate: user => {

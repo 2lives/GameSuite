@@ -69,6 +69,7 @@ class CreateUserForm extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div>
                 <Form
@@ -159,7 +160,7 @@ class CreateUserForm extends Component {
                                     </div>
                                 )}
                             />
-                            <button type="submit">submit</button>
+                            <button onClick={this.handleCreate}>submit</button>
                         </form>
                     )}
                     //     </Mutation>

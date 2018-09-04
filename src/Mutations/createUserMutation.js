@@ -18,7 +18,6 @@ export default gql`
             avatar: $avatar
         ) {
             __typename
-            id
             firstname
             lastname
             username
