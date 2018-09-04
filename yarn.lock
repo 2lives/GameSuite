@@ -446,8 +446,8 @@ aws-appsync@^1.3.4:
     uuid "3.x"
 
 aws-sdk@^2.139.0:
-  version "2.304.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.304.0.tgz#080bd9604ff5c18bc38d67904dbd484ebf3e11f7"
+  version "2.307.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.307.0.tgz#53a5906d36061d62e7b2ceb243920c7ef8feac97"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -6249,7 +6249,7 @@ sane@~1.6.0:
 
 sax@1.2.1:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
+  resolved "http://registry.npmjs.org/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
 
 sax@>=0.6.0, sax@^1.2.1, sax@^1.2.4, sax@~1.2.1:
   version "1.2.4"

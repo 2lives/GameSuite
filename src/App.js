@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import CreateUserMU from './Mutations/createUserMutation';
 import CreateUserForm from './Components/createUserForm';
 import { graphql, compose } from 'react-apollo';
 
@@ -18,5 +19,23 @@ class App extends Component {
         );
     }
 }
+
+const createUserWithData = compose(
+    graphql(CreateUserMU, {
+        props: props => ({
+            onCreate: user => {
+                props.mutate({
+                    variables: { ...user },
+                    optimisticResponse: () => ({
+                        createUser: { ...user, __typename: 'user' }
+                    })
+                });
+            }
+        }),
+        options: {
+            update: (dataProxy, { data: { createUser } }) => {}
+        }
+    })
+)(CreateUserForm);
 
 export default App;
