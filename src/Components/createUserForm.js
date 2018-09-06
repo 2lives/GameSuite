@@ -5,34 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import { Form, Field } from 'react-final-form';
 import { Mutation } from 'react-apollo';
-// import createUser from '../Mutations/createUserMutation';
-import gql from 'graphql-tag';
-
-// const createUser = gql`
-//     mutation createUser(
-//         $firstname: String!
-//         $lastname: String!
-//         $email: String!
-//         $username: String!
-//         $joined: String!
-//         $avatar: String!
-//     ) {
-//         createUser(
-//             firstname: $firstname
-//             lastname: $lastname
-//             email: $email
-//             username: $username
-//             joined: $joined
-//             avatar: $avatar
-//         ) {
-//             id
-//             firstname
-//             lastname
-//             username
-//             joined
-//         }
-//     }
-// `;
 
 class CreateUserForm extends Component {
     constructor(props) {
@@ -45,12 +17,6 @@ class CreateUserForm extends Component {
             joined: new Date()
         };
     }
-
-    //     handleChange = name => event => {
-    //         this.setState({
-    //             [event.target.name]: event.target.value
-    //         });
-    //     };
 
     handleCreate = () => {
         this.props.onCreate({
@@ -76,12 +42,10 @@ class CreateUserForm extends Component {
                     onSubmit={values => this.onSubmit(values)}
                     validate={this.validate.bind(this)}
                     render={({ handleSubmit, pristine, invalid, values }) => (
-                        //     <Mutation mutation={createUser}>
-                        //    {(createUser, { data }) => (
                         <form
                             onSubmit={e => {
                                 e.preventDefault();
-                                console.log(values);
+                                console.log(this.state);
                                 handleSubmit(values);
                             }}
                         >
