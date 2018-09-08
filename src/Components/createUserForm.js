@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import { Form, Field } from 'react-final-form';
 import { Mutation } from 'react-apollo';
+import { DatePickerDialog } from 'material-ui/DatePicker/DatePickerDialog';
 
 class CreateUserForm extends Component {
     constructor(props) {
@@ -17,6 +18,43 @@ class CreateUserForm extends Component {
             joined: new Date()
         };
     }
+
+    handleUpdateFirstname = event => {
+        this.setState({
+            [event.target.name]: event.target.value,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            username: this.state.username,
+            joined: new Date()
+        });
+    };
+    handleUpdateLastname = event => {
+        this.setState({
+            firstname: this.state.firstname,
+            [event.target.name]: event.target.value,
+            email: this.state.email,
+            username: this.state.username,
+            joined: new Date()
+        });
+    };
+    handleUpdateEmail = event => {
+        this.setState({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            [event.target.name]: event.target.value,
+            username: this.state.username,
+            joined: new Date()
+        });
+    };
+    handleUpdateUsername = event => {
+        this.setState({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            [event.target.name]: event.target.value,
+            joined: new Date()
+        });
+    };
 
     handleCreate = () => {
         this.props.onCreate({
@@ -57,7 +95,7 @@ class CreateUserForm extends Component {
                                         <TextField
                                             {...input}
                                             floatingLabelText="First Name"
-                                            onInput={this.handleUpdate}
+                                            onInput={this.handleUpdateFirstname}
                                         />
 
                                         {meta.touched &&
@@ -76,7 +114,7 @@ class CreateUserForm extends Component {
                                         <TextField
                                             {...input}
                                             floatingLabelText="Last Name"
-                                            onInput={this.handleUpdate}
+                                            onInput={this.handleUpdateLastname}
                                         />
 
                                         {meta.touched &&
@@ -95,7 +133,7 @@ class CreateUserForm extends Component {
                                         <TextField
                                             {...input}
                                             floatingLabelText="Email"
-                                            onInput={this.handleUpdate}
+                                            onInput={this.handleUpdateEmail}
                                         />
 
                                         {meta.touched &&
@@ -114,7 +152,7 @@ class CreateUserForm extends Component {
                                         <TextField
                                             {...input}
                                             floatingLabelText="Username"
-                                            onInput={this.handleUpdate}
+                                            onInput={this.handleUpdateUsername}
                                         />
 
                                         {meta.touched &&
@@ -127,7 +165,6 @@ class CreateUserForm extends Component {
                             <button onClick={this.handleCreate}>submit</button>
                         </form>
                     )}
-                    //     </Mutation>
                 />
             </div>
         );

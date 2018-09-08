@@ -7,7 +7,6 @@ export default gql`
         $email: String!
         $username: String!
         $joined: String!
-        $avatar: String!
     ) {
         createUser(
             firstname: $firstname
@@ -15,7 +14,6 @@ export default gql`
             email: $email
             username: $username
             joined: $joined
-            avatar: $avatar
         ) {
             __typename
             firstname
