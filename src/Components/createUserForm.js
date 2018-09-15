@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { Step, Stepper, StepLabel, StepContent } from 'material-ui/Stepper';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 
 import { Form, Field } from 'react-final-form';
-import { Mutation } from 'react-apollo';
-import { DatePickerDialog } from 'material-ui/DatePicker/DatePickerDialog';
 
 class CreateUserForm extends Component {
     constructor(props) {
@@ -79,7 +75,7 @@ class CreateUserForm extends Component {
                 <Form
                     onSubmit={values => this.onSubmit(values)}
                     validate={this.validate.bind(this)}
-                    render={({ handleSubmit, pristine, invalid, values }) => (
+                    render={({ handleSubmit, values }) => (
                         <form
                             onSubmit={e => {
                                 e.preventDefault();

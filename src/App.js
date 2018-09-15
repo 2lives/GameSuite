@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import HeaderBar from './Components/HeaderBar';
 
 import CreateUserMU from './Mutations/createUserMutation';
 import CreateUserForm from './Components/createUserForm';
@@ -10,10 +11,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Gamesuite</h1>
-                </header>
+                <HeaderBar />
                 <CreateUserWithData />
             </div>
         );
