@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-
+import RaisedButton from 'material-ui/RaisedButton';
+import { assetColors } from '../gsAssets/styles';
 import { Form, Field } from 'react-final-form';
+
+const styles = {
+    submitButton: {
+        padding: 10,
+        width: 80,
+        borderRadius: 5,
+        textTransform: 'capitalize',
+        backgroundColor: assetColors.teal,
+        outline: 'none',
+        border: 'none',
+        marginTop: 20,
+        ':hover': { backgroundColor: 'white' }
+    }
+};
 
 class CreateUserForm extends Component {
     constructor(props) {
@@ -71,7 +86,8 @@ class CreateUserForm extends Component {
     render() {
         console.log(this.props);
         return (
-            <div>
+            <div className="signup form">
+                <p>Signup</p>
                 <Form
                     onSubmit={values => this.onSubmit(values)}
                     validate={this.validate.bind(this)}
@@ -158,7 +174,12 @@ class CreateUserForm extends Component {
                                     </div>
                                 )}
                             />
-                            <button onClick={this.handleCreate}>submit</button>
+                            <button
+                                onClick={this.handleCreate}
+                                style={styles.submitButton}
+                            >
+                                submit
+                            </button>
                         </form>
                     )}
                 />

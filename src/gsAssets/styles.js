@@ -5,5 +5,6 @@ export const assetColors = {
     lighterBlue: '#02B1E4',
     navyBlue: '#014159',
     lightGrey: '#D1D3D4',
-    charcoal: '#414042'
+    charcoal: '#414042',
+    teal: '#33CCCC'
 };

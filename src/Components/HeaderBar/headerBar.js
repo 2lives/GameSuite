@@ -4,12 +4,23 @@ import { assetColors } from '../../gsAssets/styles';
 const styles = {
     HeaderBar: {
         width: '100vw',
-        height: '10vh',
-        backgroundColor: assetColors.lightGrey
+        height: '11vh',
+        backgroundColor: assetColors.lightGrey,
+        position: 'relative'
     },
     logo: {
         height: '70px',
         width: '250px'
+    },
+    avatar: {
+        position: 'absolute',
+        right: 8,
+        top: 8,
+        borderRadius: 100,
+        width: 50,
+        height: 50,
+        border: '1px solid',
+        borderColor: assetColors.normalBlue
     }
 };
 
@@ -23,6 +34,12 @@ export class HeaderBar extends Component {
                         style={styles.logo}
                     />
                 </div>
+                <a href="###" alt="profile">
+                    <img
+                        src={require('../../gsAssets/formattedstockavatarfinal.png')}
+                        style={styles.avatar}
+                    />
+                </a>
             </div>
         );
     }
