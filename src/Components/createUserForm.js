@@ -9,7 +9,7 @@ const styles = {
         padding: 10,
         width: 80,
         borderRadius: 5,
-        textTransform: 'capitalize',
+        textTransform: 'uppercase',
         backgroundColor: assetColors.teal,
         outline: 'none',
         border: 'none',
@@ -177,6 +177,7 @@ class CreateUserForm extends Component {
                             <button
                                 onClick={this.handleCreate}
                                 style={styles.submitButton}
+                                //   {this.state.firstname, this.state.lastname, this.state.email, this.state.username ? disabled}
                             >
                                 submit
                             </button>

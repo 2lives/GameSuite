@@ -9,8 +9,11 @@ const styles = {
         position: 'relative'
     },
     logo: {
+        paddingTop: 5,
         height: '70px',
-        width: '250px'
+        width: '250px',
+        position: 'absolute',
+        left: 5
     },
     avatar: {
         position: 'absolute',
