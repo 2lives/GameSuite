@@ -5,7 +5,7 @@ const styles = {
     HeaderBar: {
         width: '100vw',
         height: '11vh',
-        backgroundColor: assetColors.lightGrey,
+        backgroundColor: assetColors.charcoal,
         position: 'relative'
     },
     logo: {
