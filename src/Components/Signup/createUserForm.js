@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 import { assetColors } from '../../gsAssets/styles';
 import { Form, Field } from 'react-final-form';
 

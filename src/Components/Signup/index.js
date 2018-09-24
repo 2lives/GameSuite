@@ -1,2 +1,2 @@
-import CreateUserForm from './createUserForm';
-export default CreateUserForm;
+import CreateUserFormContainer from './createUserFormContainer';
+export default CreateUserFormContainer;

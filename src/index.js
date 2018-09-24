@@ -1,15 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import logo from './logo.svg';
-import './App.css';
-import HeaderBar from './Components/HeaderBar';
-
-import CreateUserMU from './Mutations/createUserMutation';
-import CreateUserForm from './Components/Signup';
-import { graphql, compose } from 'react-apollo';
 
 import AWSAppSyncClient from 'aws-appsync';
 import { ApolloProvider } from 'react-apollo';
@@ -26,7 +18,7 @@ const client = new AWSAppSyncClient({
     region: 'us-west-2',
     auth: {
         type: 'API_KEY',
-        apiKey: 'da2-atntn7cssvhqrnx5fzjzfjfy3e'
+        apiKey: 'da2-2l6kbnxk4vbvhfbghfffd2tga4'
     }
 });
 
